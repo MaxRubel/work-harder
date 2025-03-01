@@ -43,7 +43,7 @@ The Node.js script (`scripts/processData.js`) converts the raw JSON data into a 
 
 ### Replaying User Behavior
 
-The Python script (`scripts/replayActions.py`) uses pyautogui to recreate the recorded interactions:
+The Python script (`scripts/main.py`) uses pyautogui to recreate the recorded interactions:
 
 - Moves the mouse to recorded coordinates
 - Simulates clicks
@@ -86,7 +86,7 @@ The Python script (`scripts/replayActions.py`) uses pyautogui to recreate the re
 1. Prepare a `sampleDocument.txt` file with text content to be typed
 2. Run the Python script:
    ```
-   python scripts/replayActions.py
+   python scripts/scripts/main.py
    ```
 3. Switch to the application window where you want the interactions to be simulated
 4. The script will begin replaying your actions after a 5-second delay
