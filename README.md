@@ -27,6 +27,8 @@ The Svelte application records:
 - Keyboard activity
 - Timing of all interactions
 
+This logic lives in /src/App.svelte
+
 Data is timestamped and stored as a JSON array, which can be copied to the clipboard with the "PRINT" button.
 
 ### Processing the Data
