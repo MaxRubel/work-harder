@@ -2,6 +2,24 @@
 
 A tool that records human computer interactions and plays them back to simulate realistic user activity.
 
+# Quickstart
+
+first make sure you have pyautogui installed. It does the mousemovents:
+
+```javascript
+pip install pyautogui  first
+```
+
+then you can run the script:
+
+```javascript
+python script/main.py
+```
+
+It gives you 5 seconds to click into a text editor before it will start typing.
+
+To stop the program you can move the mouse to the top left corner of the screen quickly.
+
 ## Overview
 
 Work Faker consists of two main components:
