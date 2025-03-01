@@ -4,7 +4,7 @@ A tool that records human computer interactions and plays them back to simulate 
 
 # Quickstart
 
-First make sure you have pyautogui installed. It does the mousemovents:
+First make sure you have pyautogui installed. It does the mouse movents:
 
 ```
 pip install pyautogui
