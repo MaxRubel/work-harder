@@ -79,16 +79,6 @@ The Python script (`scripts/replayActions.py`) uses pyautogui to recreate the re
 3. Click the "PRINT" button to copy the recorded data to your clipboard
 4. Save the clipboard contents to a file named `data.json`
 
-### Processing
-
-Run the Node.js script to optimize the data format:
-
-```
-node scripts/processData.js
-```
-
-This creates a `formatted.json` file.
-
 ### Replaying
 
 1. Prepare a `sampleDocument.txt` file with text content to be typed
