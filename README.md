@@ -1,4 +1,4 @@
-# Work Faker
+# Work Harder
 
 A tool that records human computer interactions and plays them back to simulate realistic user activity.
 
