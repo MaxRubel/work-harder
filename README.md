@@ -31,6 +31,7 @@ Data is timestamped and stored as a JSON array, which can be copied to the clipb
 
 ### Processing the Data
 
+When writing the Python script I realized the data was not structured optimally, so 
 The Node.js script (`scripts/processData.js`) converts the raw JSON data into a more optimized format:
 
 ```javascript
