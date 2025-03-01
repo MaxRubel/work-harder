@@ -33,7 +33,7 @@ Data is timestamped and stored as a JSON array, which can be copied to the clipb
 
 ### Processing the Data
 
-When writing the Python script I realized the data was not structured optimally, so 
+When writing the Python script I realized the data was not structured optimally, so
 The Node.js script (`scripts/processData.js`) converts the raw JSON data into a more optimized format:
 
 ```javascript
@@ -86,7 +86,7 @@ The Python script (`scripts/main.py`) uses pyautogui to recreate the recorded in
 1. Prepare a `sampleDocument.txt` file with text content to be typed
 2. Run the Python script:
    ```
-   python scripts/scripts/main.py
+   python script/main.py
    ```
 3. Switch to the application window where you want the interactions to be simulated
 4. The script will begin replaying your actions after a 5-second delay
