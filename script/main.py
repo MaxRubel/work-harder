@@ -1,7 +1,5 @@
 import pyautogui
 import time
-import sys
-import os
 import json
 import random
 import string

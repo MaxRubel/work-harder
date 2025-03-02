@@ -1,14 +1,18 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
 
-  type entry = {
-    t: number;
+  interface EntryData {
     x: number | boolean;
     y: number | boolean;
     p: boolean;
-  };
+  }
 
-  let data: entry[] = [];
+  interface DataMap {
+    [timestamp: number]: EntryData;
+  }
+
+  let data: DataMap = {};
+
   const startTime: number = Date.now();
   let interval;
   let oldMousePos = { x: 0, y: 0 };
@@ -16,13 +20,12 @@
 
   function handleKeyDown() {
     const newTime = Date.now() - startTime;
-    data.push({
-      t: Math.round(newTime / 10),
+    data[Math.round(newTime / 10)] = {
       x: false,
       y: false,
       p: false,
-    });
-    data = data;
+    };
+    data = { ...data };
   }
 
   function handleMouseMove(e: MouseEvent) {
@@ -35,24 +38,22 @@
 
   function handleClick() {
     const newTime = Date.now() - startTime;
-    data.push({
-      t: Math.round(newTime / 10),
+    data[Math.round(newTime / 10)] = {
       x: false,
       y: false,
       p: true,
-    });
-    data = data;
+    };
+    data = { ...data };
   }
 
   function addMouseData() {
     const newTime = Date.now() - startTime;
-    data.push({
-      t: Math.round(newTime / 10),
+    data[Math.round(newTime / 10)] = {
       x: newMousePos.x,
       y: newMousePos.y,
       p: false,
-    });
-    data = data;
+    };
+    data = { ...data };
     oldMousePos = { ...newMousePos };
   }
 
@@ -79,8 +80,9 @@
   <div class="main">
     <button class="button" on:click={printArray}>PRINT</button>
     <div class="big">
-      {#if data.length}
-        <div>{data[data.length - 1].t}</div>
+      {#if Object.keys(data).length > 0}
+        <!-- prints the latest time interval -->
+        <div>{Object.keys(data)[Object.keys(data).length - 1]}</div>
       {/if}
     </div>
   </div>
