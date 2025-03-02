@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
+  import { onMount } from "svelte";
 
   interface EntryData {
     x: number | boolean;
@@ -11,10 +11,11 @@
     [timestamp: number]: EntryData;
   }
 
-  let data: DataMap = {};
-
   const startTime: number = Date.now();
-  let interval;
+
+  let data: DataMap = {};
+  let interval: number;
+
   let oldMousePos = { x: 0, y: 0 };
   let newMousePos = { x: 0, y: 0 };
 
@@ -67,12 +68,13 @@
         addMouseData();
       }
     }, 100);
-  });
 
-  onDestroy(() => {
-    window.removeEventListener("keydown", handleKeyDown);
-    window.removeEventListener("mousemove", handleMouseMove);
-    window.removeEventListener("click", handleClick);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleClick);
+    };
   });
 </script>
 

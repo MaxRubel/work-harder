@@ -10,14 +10,16 @@ pyautogui.FAILSAFE = True
 def main():
     print("Get ready to work!")
     
-    # load JSON and text data
+    # load user input data:
     with open('script/formatted.json', 'r') as file:
         data = json.load(file)    
 
+    # xload sample file to type:
     with open('script/sampleDocument.txt', 'r') as file:
         document = file.read()
         
     keyCount = 0
+    
     time.sleep(5)
     
     # main loop
@@ -45,5 +47,7 @@ def main():
                 keyCount += 1
                 
         time.sleep(.01)
+        
+    exit()
 
 main()
