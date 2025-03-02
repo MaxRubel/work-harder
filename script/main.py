@@ -11,10 +11,10 @@ def main():
     print("Get ready to work!")
     
     # load JSON and text data
-    with open('formatted.json', 'r') as file:
+    with open('script/formatted.json', 'r') as file:
         data = json.load(file)    
 
-    with open('sampleDocument.txt', 'r') as file:
+    with open('script/sampleDocument.txt', 'r') as file:
         document = file.read()
         
     keyCount = 0
