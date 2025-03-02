@@ -27,13 +27,6 @@ Work Faker consists of two main components:
 1. A **recorder** built with Svelte that captures mouse movements, clicks, and keyboard activity
 2. A **replayer** written in Python that recreates the recorded user behavior
 
-This tool can be useful for:
-
-- Testing user interfaces with realistic interaction patterns
-- Creating demos that show natural user workflows
-- Automating repetitive tasks while maintaining human-like behavior
-- Amusing your coworkers (use responsibly!)
-
 ## How It Works
 
 ### Recording User
@@ -49,16 +42,6 @@ This logic lives in /src/App.svelte
 
 Data is timestamped and stored as a JSON array, which can be copied to the clipboard with the "PRINT" button.
 
-### Processing the Data
-
-When writing the Python script I realized the data was not structured optimally, so
-The Node.js script (`scripts/processData.js`) converts the raw JSON data into a more optimized format:
-
-```javascript
-// Before: [{t: 123, x: 456, y: 789, p: false}, ...]
-// After: {123: {x: 456, y: 789, p: false}, ...}
-```
-
 ### Replaying User Behavior
 
 The Python script (`scripts/main.py`) uses pyautogui to recreate the recorded interactions:
@@ -67,6 +50,8 @@ The Python script (`scripts/main.py`) uses pyautogui to recreate the recorded in
 - Simulates clicks
 - Types text from a sample document
 - Adds realistic variations like occasional typos and corrections
+
+  It reads mouse and keyboard data from the "formatted.json" file in the scripts folder and then it types from anything in the sampleDocument.txt file in the scripts folder.
 
 ## Installation
 
